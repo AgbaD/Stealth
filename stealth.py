@@ -71,5 +71,8 @@ class Stealth:
 
         print("File unhidden")
        
+       
+if __name__ == "__main__":
+    Stealth()
     
     
