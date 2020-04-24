@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#! /usr/bin/env python
 # Author:   @BlankGodd
 
 from subprocess import call
