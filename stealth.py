@@ -2,7 +2,7 @@
 # Author:   @BlankGodd
 
 from subprocess import call
-import os
+import os, sys, time
 from platform import system
 
 
@@ -21,8 +21,8 @@ class Stealth:
         elif command == 'unhide':
             self.unhide()
         else:
-            print("Invalid command!")
-            self.__init__()
+            time.sleep(1.5)
+            sys.exit()
 
     def hide(self):
         opsys = system()
@@ -34,14 +34,15 @@ class Stealth:
                 lst = [i for i in self.path.split('/')]
             except:
                 print("Invalid file path for linux")
-            f = lst[-1]
-            lst[-1] = '.{0}'.format(f)
-            for i in range(len(lst)):
-                c = lst[i]
-                lst[i] = '/{0}'.format(c)
-            lst.remove('/')
-            new_path = ''.join(lst)
-            os.rename(self.path, new_path)
+            if lst != []:
+                f = lst[-1]
+                lst[-1] = '.{0}'.format(f)
+                for i in range(len(lst)):
+                    c = lst[i]
+                    lst[i] = '/{0}'.format(c)
+                lst.remove('/')
+                new_path = ''.join(lst)
+                os.rename(self.path, new_path)
 
         print("File hidden")
     
@@ -55,19 +56,20 @@ class Stealth:
                 lst = [i for i in self.path.split('/')]
             except:
                 print("Invalid file path for linux")
-            f = lst[-1]
-            lst[-1] = '.{0}'.format(f)
-            val = lst[-1]
-            for i in range(len(lst)):
-                c = lst[i]
-                lst[i] = '/{0}'.format(c)
-            lst.remove('/')
-            new_path = ''.join(lst)
+            if lst != []:
+                f = lst[-1]
+                lst[-1] = '.{0}'.format(f)
+                val = lst[-1]
+                for i in range(len(lst)):
+                    c = lst[i]
+                    lst[i] = '/{0}'.format(c)
+                lst.remove('/')
+                new_path = ''.join(lst)
 
-            files = os.system('ls -a')
-            for var in files:
-                if var == val:
-                    os.rename(new_path, self.path)
+                files = os.system('ls -a')
+                for var in files:
+                    if var == val:
+                        os.rename(new_path, self.path)
 
         print("File unhidden")
        
