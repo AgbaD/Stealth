@@ -14,11 +14,11 @@ class Stealth:
     """
 
     def __init__(self):
-        self.path = input("Enter the file path\n:")
-        command = input("Enter command to 'hide' or unhide\n:").lower()
-        if command == 'hide':
+        self.path = input("Enter the file path you want to hide\n:")
+        command = input("Do you want to hide or unhide, (Y for hide, N for unhide)\n:").lower()
+        if command == 'y':
             self.hide()
-        elif command == 'unhide':
+        elif command == 'n':
             self.unhide()
         else:
             time.sleep(1.5)
@@ -34,7 +34,7 @@ class Stealth:
                 lst = [i for i in self.path.split('/')]
             except:
                 print("Invalid file path for linux")
-            if lst != []:
+            if lst:
                 f = lst[-1]
                 lst[-1] = '.{0}'.format(f)
                 for i in range(len(lst)):
@@ -56,7 +56,7 @@ class Stealth:
                 lst = [i for i in self.path.split('/')]
             except:
                 print("Invalid file path for linux")
-            if lst != []:
+            if lst:
                 f = lst[-1]
                 lst[-1] = '.{0}'.format(f)
                 val = lst[-1]
