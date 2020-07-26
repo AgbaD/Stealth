@@ -1,2 +1,10 @@
 # Stealth
 A script to hide or unhide files or folders. The complete path to the file must be provided
+
+## Usage
+   - 1. ```
+        $ python3 stealth.py
+        ```
+   - 2. Enter file path
+   - 3. Enter command (hide or unhide)
+
