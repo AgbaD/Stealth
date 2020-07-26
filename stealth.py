@@ -66,10 +66,8 @@ class Stealth:
                 lst.remove('/')
                 new_path = ''.join(lst)
 
-                files = os.system('ls -a')
-                for var in files:
-                    if var == val:
-                        os.rename(new_path, self.path)
+                if os.path.exists(new_path):
+                    os.rename(new_path, self.path)
 
         print("File unhidden")
        
