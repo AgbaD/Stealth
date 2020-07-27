@@ -18,7 +18,7 @@ class Stealth:
 
     def __init__(self):
         self.path = input("Enter the file path\n:")
-        command = input("Enter command to 'hide' or unhide\n:").lower()
+        command = input("Enter command to 'hide' or 'unhide'\n:").lower()
         if command == 'hide':
             self.hide()
         elif command == 'unhide':
