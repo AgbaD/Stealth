@@ -7,7 +7,7 @@ A script to hide or unhide files or folders. The complete path to the file must 
         ```
    - 2. Enter file path
    - 3. Enter command (hide or unhide)
-   - 4. To unhide, enter path to folder + file name
+   - 4. To unhide, enter path to folder + file name without '.'
         ```
         $ /home/blank/Desktop/{file name}
         ```
